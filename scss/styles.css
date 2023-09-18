@@ -1,3 +1,29 @@
-h1 {
-  color: #9356DC;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  width: 375px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header h1 {
+  color: black;
+  background: white;
+  font-family: "Shrikhand", cursive;
+  font-size: 30px;
+  width: 162px;
+  padding: 14px 89px 13px 89px;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */
