@@ -1,4 +1,4 @@
-// _ pour dire que c'est un module et qu'il ne faut pas le compiler en css
+// underscore pour dire que c'est un module et qu'il ne faut pas le compiler en css
 @import "_variables";
 @import "_mixins";
 
@@ -114,21 +114,85 @@ main {
 .restaurants {
     display: grid;
     justify-content: center;
+    gap: 18px;
+    padding-bottom: 50px;
 
     ._restaurants-titre {
         width: 70%;
-        padding-left: 20px;
         padding-top: 30px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
     }
 
     ._restaurants-card {
         display: grid;
         justify-content: space-around;
+        background: $white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
     }
     ._restaurants-img {
-        height: 251px;
-        width: 340px;
-        border-radius: 15px;
+        height: 190px;
+        width: 346px;
+        border-radius: 15px 15px 0 0;
+        object-fit: cover;
+    }
+    ._restaurants-txt {
+        height: 64px;
+    }
+    ._restaurants-txt h6 {
+        font-size: 18px;
+        height: 20px;
+        width: 267px;
+        padding-left: 13px;
+        padding-top: 12px;
+    }
+
+    ._restaurants-txt p {
+        font-size: 17px;
+        height: 24px;
+        font-weight: 300;
+        padding-left: 13px;
+        padding-top: 3px;
+    }
+
+    ._restaurants-heart {
+        width: 16px;
+        position: relative;
+        top: -33px;
+        left: 303px;
     }
 }
+
+footer {
+    background: $grey-dark;
+    display: flex;
+    flex-direction: column;
+    padding: 22px 25px 22px 25px;
+
+    // icones trop grandes
+    i {
+        padding-right: 5px;
+    }
+    ._footer-logo {
+        color: $white;
+        font-family: "Shrikhand", cursive;
+        height: 27px;
+        width: 139px;
+        font-weight: 100;
+        padding-bottom: 16px;
+    }
+
+    ._footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $white;
+    }
+}
+
+// checker la police d'écriture
+// repérer les doublons et appliquer le DRY avec mixins/variables
