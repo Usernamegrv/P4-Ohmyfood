@@ -5,16 +5,16 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto flex", sans-serif;
 }
 
 body {
     width: 375px;
-    
 }
 
 header {
     @include display-flex-center;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 
     h1 {
         color: $black;
@@ -28,4 +28,107 @@ header {
 
 .location {
     @include display-flex-center;
+    background-color: $grey;
+    color: $grey-dark;
+    height: 50px;
+    font-weight: 600;
+    padding: 0 0 0.5px 0;
+}
+
+main {
+    background: $background;
+}
+
+.discover {
+    @include column-center;
+    padding-top: 30px;
+
+    ._discover-h4 {
+        @include display-flex-center;
+        height: 68px;
+        width: 70%;
+        text-align: center;
+        font-size: 24px;
+    }
+    ._discover-p {
+        font-size: 18px;
+        text-align: center;
+        width: 85%;
+        height: 46px;
+        color: $grey-dark;
+        padding-top: 8px;
+    }
+
+    ._discover-btn {
+        @include column-center;
+        width: 218px;
+        height: 50px;
+        border-radius: 25px;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+        background: $button-gradient;
+        color: $white;
+        margin: 27px 0 60px 0;
+    }
+}
+
+.fonctionnement {
+    @include column-center;
+    background: $white;
+    gap: 25px;
+    padding: 48px 0 30px 0;
+
+    ._fonctionnement-p {
+        font-size: 24px;
+        font-weight: 700;
+        width: 355px;
+        padding-left: 20px;
+        padding-bottom: 25px;
+    }
+
+    ._fonctionnement-box {
+        background: $background;
+        width: 322.5px;
+        height: 72px;
+        border-radius: 20px;
+        text-align: center;
+        @include display-flex-center;
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        gap: 15px;
+    }
+
+    ._fonctionnement-absolute {
+        background: $primaire;
+        color: $white;
+        position: absolute;
+        border-radius: 500px;
+        transform: translateX(-650%);
+        padding: 3px 8px 3px 8px;
+    }
+
+    ._box-p {
+        font-weight: 600;
+        width: 211px;
+    }
+}
+// mettre des h2 aux autres titres avec les bonnes propriétés
+.restaurants {
+    display: grid;
+    justify-content: center;
+
+    ._restaurants-titre {
+        width: 70%;
+        padding-left: 20px;
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+
+    ._restaurants-card {
+        display: grid;
+        justify-content: space-around;
+    }
+    ._restaurants-img {
+        height: 251px;
+        width: 340px;
+        border-radius: 15px;
+    }
 }
