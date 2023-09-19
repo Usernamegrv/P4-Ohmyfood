@@ -123,6 +123,10 @@ main {
         padding-bottom: 20px;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     ._restaurants-card {
         display: grid;
         justify-content: space-around;
@@ -138,6 +142,7 @@ main {
     }
     ._restaurants-txt {
         height: 64px;
+        color: $black;
     }
     ._restaurants-txt h6 {
         font-size: 18px;
@@ -194,5 +199,113 @@ footer {
     }
 }
 
-// checker la police d'écriture
-// repérer les doublons et appliquer le DRY avec mixins/variables
+
+// PAGES RESTAURANTS
+
+// HEADER PAGES RESTAURANTS
+._restaurants-header h1 {
+    padding: 14px 89px 13px 42px;
+}
+._header-icone {
+    color: $grey-dark;
+    width: 30px;
+    padding-left: 17px;
+}
+
+// EN - TETE RESTAURANTS
+
+._restaurants-entete img {
+    width: 100%;
+    object-fit: cover;
+}
+
+._restaurants-titres {
+    font-family: "Shrikhand", cursive;
+    position: relative;
+    top: -42px;
+    font-size: 28px;
+    border-radius: 25px 25px 0 0;
+    background: $background;
+    padding: 16px 0 0 15px;
+    display: flex;
+    gap: 40px;
+}
+
+// MENUS PAGES RESTAURANTS
+
+.menus {
+    display: grid;
+    justify-content: center;
+    gap: 40px;
+}
+
+.entrees-container {
+    @include column-center;
+    gap: 12px;
+
+    ._entrees-titre {
+        font-weight: 100;
+        height: 27px;
+        width: 337px;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        width: 300px;
+        height: 40px;
+        padding: 20px;
+        gap: 5px;
+        background: $white;
+        box-shadow: 0 4.01149px 15.0431px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    ._article-titre {
+        height: 21px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    ._article-sous {
+        display: flex;
+        justify-content: space-between;
+        height: 19px;
+        font-size: 15px;
+    }
+    strong {
+        height: 18px;
+    }
+}
+
+// BOUTON COMMANDER RESTAURANTS
+
+.bouton-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ._bouton-menu {
+        width: 186px;
+        height: 50px;
+        border-radius: 25px;
+        background: $button-gradient;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+
+    ._bouton-text {
+        color: $white;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+// RETIRER ELEMENTS INLINE ICONE ET LES DECLARER EN CSS
+// AJOUTER TITTLES ET ALT 
+// CHECKER LA POLICE D'ECRITURE
+// REPERER LES DOUBLONS ET APPLIQUER LA METHODE DRY AVEC MIXINS / VARIABLES

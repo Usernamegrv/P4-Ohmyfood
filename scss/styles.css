@@ -128,6 +128,9 @@ main {
   padding-top: 30px;
   padding-bottom: 20px;
 }
+.restaurants a {
+  text-decoration: none;
+}
 .restaurants ._restaurants-card {
   display: grid;
   justify-content: space-around;
@@ -144,6 +147,7 @@ main {
 }
 .restaurants ._restaurants-txt {
   height: 64px;
+  color: black;
 }
 .restaurants ._restaurants-txt h6 {
   font-size: 18px;
@@ -191,4 +195,101 @@ footer ._footer-links {
 footer a {
   text-decoration: none;
   color: white;
+}
+
+._restaurants-header h1 {
+  padding: 14px 89px 13px 42px;
+}
+
+._header-icone {
+  color: #353535;
+  width: 30px;
+  padding-left: 17px;
+}
+
+._restaurants-entete img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+._restaurants-titres {
+  font-family: "Shrikhand", cursive;
+  position: relative;
+  top: -42px;
+  font-size: 28px;
+  border-radius: 25px 25px 0 0;
+  background: #F6F6F6;
+  padding: 16px 0 0 15px;
+  display: flex;
+  gap: 40px;
+}
+
+.menus {
+  display: grid;
+  justify-content: center;
+  gap: 40px;
+}
+
+.entrees-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.entrees-container ._entrees-titre {
+  font-weight: 100;
+  height: 27px;
+  width: 337px;
+}
+.entrees-container article {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  width: 300px;
+  height: 40px;
+  padding: 20px;
+  gap: 5px;
+  background: white;
+  box-shadow: 0 4.01149px 15.0431px 0 rgba(0, 0, 0, 0.1);
+}
+.entrees-container ._article-titre {
+  height: 21px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.entrees-container ._article-sous {
+  display: flex;
+  justify-content: space-between;
+  height: 19px;
+  font-size: 15px;
+}
+.entrees-container strong {
+  height: 18px;
+}
+
+.bouton-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bouton-container ._bouton-menu {
+  width: 186px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.bouton-container ._bouton-text {
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }/*# sourceMappingURL=styles.css.map */
