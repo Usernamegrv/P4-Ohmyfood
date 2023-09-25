@@ -1,1 +1,25 @@
-{}
+{
+    "editor.fontSize": 15,
+    "window.zoomLevel": 3,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "[css]": {
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    },
+
+ 
+
+    "liveSassCompile.settings.formats": [
+
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/styles",
+        },
+    ],
+    "liveSassCompile.settings.watchOnLaunch": true,
+    
+
+}

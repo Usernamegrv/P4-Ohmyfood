@@ -8,9 +8,9 @@
     font-family: "Roboto flex", sans-serif;
 }
 
-body {
-    width: 375px;
-}
+//MOBILE FIRST (375px)
+
+// HEADER
 
 header {
     @include display-flex-center;
@@ -26,6 +26,8 @@ header {
     }
 }
 
+// LOCATION
+
 .location {
     @include display-flex-center;
     background-color: $grey;
@@ -35,9 +37,13 @@ header {
     padding: 0 0 0.5px 0;
 }
 
+// MAIN
+
 main {
     background: $background;
 }
+
+//DISCOVER
 
 .discover {
     @include column-center;
@@ -71,17 +77,23 @@ main {
     }
 }
 
+//FONCTIONNEMENT
+
 .fonctionnement {
     @include column-center;
     background: $white;
     gap: 25px;
     padding: 48px 0 30px 0;
 
+    ._container-fonctionnement {
+        @include column-center;
+        gap: 25px;
+    }
+
     ._fonctionnement-p {
         font-size: 24px;
         font-weight: 700;
-        width: 355px;
-        padding-left: 20px;
+        width: 70%;
         padding-bottom: 25px;
     }
 
@@ -109,18 +121,31 @@ main {
         font-weight: 600;
         width: 211px;
     }
+
+    @media screen and (min-width: 1024px) {
+        ._container-fonctionnement {
+            flex-direction: row;
+            margin-bottom: 20px;
+            width: 95%;
+        }
+    }
 }
+
 // mettre des h2 aux autres titres avec les bonnes propriétés
 .restaurants {
-    display: grid;
-    justify-content: center;
-    gap: 18px;
+    @include column-center;
     padding-bottom: 50px;
 
     ._restaurants-titre {
-        width: 70%;
+        @include column-center;
+        width: 50%;
         padding-top: 30px;
         padding-bottom: 20px;
+    }
+
+    ._restaurants-container {
+        @include column-center;
+        gap: 18px;
     }
 
     a {
@@ -166,18 +191,36 @@ main {
         top: -33px;
         left: 303px;
     }
+
+    @media screen (min-width: 1024px) {
+        
+        ._restaurants-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 60%;
+        }
+    }
 }
+// *********** J'EN SUIS LA -- FIXER PROBLEMO WATCH SASS **************
+
+//  FOOTER
 
 footer {
     background: $grey-dark;
     display: flex;
     flex-direction: column;
-    padding: 22px 25px 22px 25px;
+    align-items: center;
+    padding: 22px 0 22px 0;
 
     // icones trop grandes
     i {
         padding-right: 5px;
     }
+    ._container-footer {
+        width: 90%;
+    }
+
     ._footer-logo {
         color: $white;
         font-family: "Shrikhand", cursive;
@@ -199,8 +242,7 @@ footer {
     }
 }
 
-
-// PAGES RESTAURANTS
+// PAGES RESTAURANTS (375 px )
 
 // HEADER PAGES RESTAURANTS
 ._restaurants-header h1 {
@@ -228,6 +270,8 @@ footer {
     background: $background;
     padding: 16px 0 0 15px;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     gap: 40px;
 }
 
@@ -306,6 +350,6 @@ footer {
 }
 
 // RETIRER ELEMENTS INLINE ICONE ET LES DECLARER EN CSS
-// AJOUTER TITTLES ET ALT 
+// AJOUTER TITTLES ET ALT
 // CHECKER LA POLICE D'ECRITURE
 // REPERER LES DOUBLONS ET APPLIQUER LA METHODE DRY AVEC MIXINS / VARIABLES
