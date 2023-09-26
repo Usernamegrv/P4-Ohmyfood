@@ -10,7 +10,7 @@
 
 //MOBILE FIRST (375px)
 
-// HEADER
+// *** HEADER ***
 
 header {
     @include display-flex-center;
@@ -26,7 +26,7 @@ header {
     }
 }
 
-// LOCATION
+// *** LOCATION ***
 
 .location {
     @include display-flex-center;
@@ -37,13 +37,19 @@ header {
     padding: 0 0 0.5px 0;
 }
 
-// MAIN
+// *** MAIN ***
 
 main {
     background: $background;
 }
 
-//DISCOVER
+@media screen and (min-width: 1024px) {
+    ._main-restaurants {
+        background: $white;
+    }
+}
+
+// ***  DISCOVER ***
 
 .discover {
     @include column-center;
@@ -74,10 +80,15 @@ main {
         background: $button-gradient;
         color: $white;
         margin: 27px 0 60px 0;
+        opacity: 1;
+        transition: 0.2s;
+    }
+    ._discover-btn:hover {
+        @include btn-hover;
     }
 }
 
-//FONCTIONNEMENT
+// *** FONCTIONNEMENT ***
 
 .fonctionnement {
     @include column-center;
@@ -93,7 +104,7 @@ main {
     ._fonctionnement-p {
         font-size: 24px;
         font-weight: 700;
-        width: 70%;
+        width: 90%;
         padding-bottom: 25px;
     }
 
@@ -106,6 +117,12 @@ main {
         @include display-flex-center;
         box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
         gap: 15px;
+        opacity: 1;
+        transition: 0.3s ease-in-out;
+    }
+
+    ._fonctionnement-box:hover {
+        @include btn-hover;
     }
 
     ._fonctionnement-absolute {
@@ -123,20 +140,27 @@ main {
     }
 
     @media screen and (min-width: 1024px) {
+        ._fonctionnement-p {
+            width: 70%;
+        }
         ._container-fonctionnement {
             flex-direction: row;
             margin-bottom: 20px;
             width: 95%;
+            gap: 45px;
         }
     }
 }
 
+// *** RESTAURANTS ***
+
 // mettre des h2 aux autres titres avec les bonnes propriétés
+
 .restaurants {
     @include column-center;
     padding-bottom: 50px;
 
-    ._restaurants-titre {
+    ._restaurants-titre-accueil {
         @include column-center;
         width: 50%;
         padding-top: 30px;
@@ -151,6 +175,25 @@ main {
     a {
         text-decoration: none;
     }
+    .badge {
+        @include column-center;
+        width: 80px;
+        height: 29px;
+        text-decoration: none;
+        background: $tertiaire;
+        position: relative;
+        bottom: -50px;
+        right: -266px;
+
+        @media screen and (min-width: 1024px) {
+            right: -400px;
+        }
+    }
+
+    .badge p {
+        color: $green;
+        font-weight: bold;
+    }
 
     ._restaurants-card {
         display: grid;
@@ -158,6 +201,12 @@ main {
         background: $white;
         border-radius: 15px;
         box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        opacity: 1;
+        transition: 0.3s ease-in-out;
+    }
+
+    ._restaurants-card:hover {
+        @include btn-hover;
     }
     ._restaurants-img {
         height: 190px;
@@ -192,19 +241,36 @@ main {
         left: 303px;
     }
 
-    @media screen (min-width: 1024px) {
-        
+    @media (min-width: 1024px) {
         ._restaurants-container {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            width: 60%;
+            gap: 100px;
+            width: 80%;
+        }
+
+        ._restaurants-titre-accueil {
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        ._restaurants-card {
+            width: 480px;
+        }
+
+        ._restaurants-img {
+            width: 480px;
+        }
+
+        ._restaurants-heart {
+            left: 425px;
         }
     }
 }
-// *********** J'EN SUIS LA -- FIXER PROBLEMO WATCH SASS **************
 
-//  FOOTER
+//  *** FOOTER ****
 
 footer {
     background: $grey-dark;
@@ -234,17 +300,48 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 7px;
+
     }
 
     a {
         text-decoration: none;
         color: $white;
     }
+
+    @media (min-width: 1024px) {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row-reverse;
+        padding: 50px 0 0 0;
+
+        ._container-footer {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: baseline;
+            gap: 105px;
+        }
+        ._footer-links {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        ._link-partenaire {
+            padding-right: 50px;
+        }
+    }
 }
 
-// PAGES RESTAURANTS (375 px )
+// ***********  PAGES RESTAURANTS (MOBILE FIRST ) ******************
 
 // HEADER PAGES RESTAURANTS
+
+@media screen and (min-width: 1024px) {
+    ._restaurants-header {
+        justify-content: flex-start;
+        gap: 589.5px;
+    }
+}
+
 ._restaurants-header h1 {
     padding: 14px 89px 13px 42px;
 }
@@ -259,44 +356,76 @@ footer {
 ._restaurants-entete img {
     width: 100%;
     object-fit: cover;
-}
 
-._restaurants-titres {
-    font-family: "Shrikhand", cursive;
-    position: relative;
-    top: -42px;
-    font-size: 28px;
-    border-radius: 25px 25px 0 0;
-    background: $background;
-    padding: 16px 0 0 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
+    @media (min-width: 1024px) {
+        height: 345px;
+    }
 }
 
 // MENUS PAGES RESTAURANTS
 
 .menus {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 40px;
+    width: 100%;
+    position: relative;
+    top: -34px;
+    background: $background;
+    border-radius: 25px 25px 0 0;
 }
 
-.entrees-container {
+@media screen and (min-width: 1024px) {
+    .menus {
+        width: 60%;
+        right: -315px;
+        padding-bottom: 165px;
+    }
+}
+
+// NOMS RESTAURANTS
+
+._restaurants-titres {
+    padding: 16px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 80%;
+
+    p {
+        font-family: "Shrikhand", cursive;
+        font-size: 26px;
+    }
+}
+
+// ENTREES - PLATS - DESSERTS
+
+.plats-container {
     @include column-center;
     gap: 12px;
+    width: 100%;
 
-    ._entrees-titre {
+    ._plats-titre {
         font-weight: 100;
         height: 27px;
-        width: 337px;
+        width: 90%;
     }
+
+    ._plats-border {
+        width: 40px;
+        border-bottom: solid;
+        border-color: $tertiaire;
+    }
+
     article {
         display: flex;
         flex-direction: column;
         border-radius: 15px;
-        width: 300px;
+        width: 80%;
         height: 40px;
         padding: 20px;
         gap: 5px;
@@ -318,6 +447,12 @@ footer {
     strong {
         height: 18px;
     }
+
+    @media screen and (min-width: 1024px) {
+        ._entrees-titre {
+            width: 93%;
+        }
+    }
 }
 
 // BOUTON COMMANDER RESTAURANTS
@@ -326,26 +461,46 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+._bouton-menu {
+    width: 186px;
+    height: 50px;
+    border-radius: 25px;
+    background: $button-gradient;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
 
-    ._bouton-menu {
-        width: 186px;
-        height: 50px;
-        border-radius: 25px;
-        background: $button-gradient;
-        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
-        margin-bottom: 40px;
-        margin-top: 40px;
+._bouton-text {
+    color: $white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+
+._bouton-text:hover {
+    @include btn-hover;
+}
+
+@media screen and (min-width: 1024px) {
+    .bouton-container {
+        position: relative;
+        top: -152px;
     }
+}
 
-    ._bouton-text {
-        color: $white;
-        text-align: center;
-        font-size: 16px;
-        font-weight: 500;
-        height: 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+// FOOTER PAGE RESTAURANTS
+@media screen and (min-width: 1024px) {
+    ._footer-restaurants {
+        margin: -163px 0 0 0;
     }
 }
 
