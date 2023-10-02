@@ -1,0 +1,63 @@
+/* @keyframes menu {
+    from {
+        margin-left: 100%;
+        width: 300%;
+        opacity: 0;
+    }
+    to {
+        margin-left: 0%;
+        width: 80%;
+        opacity: 1;
+    }
+} */
+@keyframes menus {
+  0% {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  opacity: 0.8;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  animation: disappear 200ms 2s forwards;
+  animation-delay: 3s;
+  transform-origin: top;
+  /* i {
+       color: transparent;
+       background-image: $button-gradient;
+       background-clip: text; 
+   }*/
+}
+.loader::after {
+  content: "";
+  height: 40px;
+  width: 40px;
+  border: 10px dotted #9356DC;
+  border-radius: 50px;
+  animation: spin 3s infinite ease-in-out;
+  animation-iteration-count: 2;
+}
+
+@keyframes disappear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=loader.css.map */

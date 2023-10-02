@@ -1,0 +1,24 @@
+/* @keyframes menu {
+    from {
+        margin-left: 100%;
+        width: 300%;
+        opacity: 0;
+    }
+    to {
+        margin-left: 0%;
+        width: 80%;
+        opacity: 1;
+    }
+} */
+
+@keyframes menus {
+    0% {
+        transform: translateY(60%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

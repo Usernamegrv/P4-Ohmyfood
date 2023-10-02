@@ -1,3 +1,25 @@
+/* @keyframes menu {
+    from {
+        margin-left: 100%;
+        width: 300%;
+        opacity: 0;
+    }
+    to {
+        margin-left: 0%;
+        width: 80%;
+        opacity: 1;
+    }
+} */
+@keyframes menus {
+  0% {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -82,7 +104,7 @@ main {
   opacity: 0.7;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.8);
 }
 
 .fonctionnement {
@@ -118,14 +140,6 @@ main {
   align-items: center;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   gap: 15px;
-  opacity: 1;
-  transition: 0.3s ease-in-out;
-}
-.fonctionnement ._fonctionnement-box:hover {
-  opacity: 0.7;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
 }
 .fonctionnement ._fonctionnement-absolute {
   background: #9356DC;
@@ -188,11 +202,11 @@ main {
   background: #99E2D0;
   position: relative;
   bottom: -50px;
-  right: -266px;
+  right: -254px;
 }
 @media screen and (min-width: 1024px) {
   .restaurants .badge {
-    right: -400px;
+    right: -388px;
   }
 }
 .restaurants .badge p {
@@ -206,13 +220,12 @@ main {
   border-radius: 15px;
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   opacity: 1;
-  transition: 0.3s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 .restaurants ._restaurants-card:hover {
-  opacity: 0.7;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+  transition: 0.1s ease-in-out;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.6);
 }
 .restaurants ._restaurants-img {
   height: 190px;
@@ -239,11 +252,25 @@ main {
   padding-left: 13px;
   padding-top: 3px;
 }
-.restaurants ._restaurants-heart {
+.restaurants ._restaurants-heart-container {
   width: 16px;
   position: relative;
   top: -33px;
-  left: 303px;
+  left: 305px;
+}
+.restaurants ._restaurants-heart-container .fa-solid {
+  position: relative;
+  top: -18px;
+  opacity: 0;
+  color: transparent;
+  background-image: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: 0.2s ease-in-out;
+}
+.restaurants ._restaurants-heart-container .fa-solid:hover {
+  opacity: 1;
+  transition: 0.1s ease-in-out;
 }
 @media (min-width: 1024px) {
   .restaurants ._restaurants-container {
@@ -265,7 +292,7 @@ main {
   .restaurants ._restaurants-img {
     width: 480px;
   }
-  .restaurants ._restaurants-heart {
+  .restaurants ._restaurants-heart-container {
     left: 425px;
   }
 }
@@ -353,6 +380,14 @@ footer a {
 .menus {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+._menus-container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 40px;
@@ -364,9 +399,8 @@ footer a {
 }
 
 @media screen and (min-width: 1024px) {
-  .menus {
+  ._menus-container {
     width: 60%;
-    right: -315px;
     padding-bottom: 165px;
   }
 }
@@ -403,29 +437,74 @@ footer a {
   border-color: #99E2D0;
 }
 .plats-container article {
+  animation: menus 1s;
+  animation-fill-mode: both;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border-radius: 15px;
   width: 80%;
-  height: 40px;
-  padding: 20px;
-  gap: 5px;
+  height: 70px;
   background: white;
   box-shadow: 0 4.01149px 15.0431px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
-.plats-container ._article-titre {
+.plats-container article:nth-child(1) {
+  animation-delay: 100ms;
+}
+.plats-container article:nth-child(2) {
+  animation-delay: 200ms;
+}
+.plats-container article:nth-child(3) {
+  animation-delay: 300ms;
+}
+.plats-container article:nth-child(4) {
+  animation-delay: 400ms;
+}
+.plats-container article ._article-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+.plats-container article ._article-price {
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+.plats-container article ._article-price p {
+  font-weight: bold;
+}
+.plats-container article h3 {
   height: 21px;
   font-size: 18px;
   font-weight: bold;
 }
-.plats-container ._article-sous {
-  display: flex;
-  justify-content: space-between;
+.plats-container article p {
   height: 19px;
   font-size: 15px;
 }
-.plats-container strong {
+.plats-container article strong {
   height: 18px;
+  margin-left: auto;
+}
+.plats-container article ._article-coche {
+  background: #99E2D0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: -50px;
+  width: 50px;
+  transition: 0.2s ease-in-out;
+}
+.plats-container article ._article-coche:hover {
+  cursor: pointer;
+}
+.plats-container article:hover ._article-coche {
+  transition: 0.2s ease-in-out;
+  margin-right: 0;
 }
 @media screen and (min-width: 1024px) {
   .plats-container ._entrees-titre {
@@ -467,7 +546,7 @@ footer a {
   opacity: 0.7;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.8);
 }
 
 @media screen and (min-width: 1024px) {

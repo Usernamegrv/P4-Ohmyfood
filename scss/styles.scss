@@ -1,6 +1,7 @@
 // underscore pour dire que c'est un module et qu'il ne faut pas le compiler en css
 @import "_variables";
 @import "_mixins";
+@import "_animations";
 
 * {
     margin: 0;
@@ -8,9 +9,9 @@
     font-family: "Roboto flex", sans-serif;
 }
 
-//MOBILE FIRST (375px)
+//MOBILE FIRST - PAGE D'ACCUEIL
 
-// *** HEADER ***
+// *** HEADER - PAGE D'ACCUEIL***
 
 header {
     @include display-flex-center;
@@ -26,7 +27,7 @@ header {
     }
 }
 
-// *** LOCATION ***
+// *** LOCATION - PAGE D'ACCUEL***
 
 .location {
     @include display-flex-center;
@@ -49,7 +50,7 @@ main {
     }
 }
 
-// ***  DISCOVER ***
+// ***  DISCOVER - PAGE D'ACCUEIL ***
 
 .discover {
     @include column-center;
@@ -82,13 +83,14 @@ main {
         margin: 27px 0 60px 0;
         opacity: 1;
         transition: 0.2s;
-    }
-    ._discover-btn:hover {
-        @include btn-hover;
+
+        &:hover {
+            @include btn-hover;
+        }
     }
 }
 
-// *** FONCTIONNEMENT ***
+// *** FONCTIONNEMENT - PAGE D'ACCUEIL***
 
 .fonctionnement {
     @include column-center;
@@ -117,12 +119,6 @@ main {
         @include display-flex-center;
         box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
         gap: 15px;
-        opacity: 1;
-        transition: 0.3s ease-in-out;
-    }
-
-    ._fonctionnement-box:hover {
-        @include btn-hover;
     }
 
     ._fonctionnement-absolute {
@@ -152,7 +148,7 @@ main {
     }
 }
 
-// *** RESTAURANTS ***
+// *** RESTAURANTS - PAGE D'ACCUEIL ***
 
 // mettre des h2 aux autres titres avec les bonnes propriétés
 
@@ -175,6 +171,9 @@ main {
     a {
         text-decoration: none;
     }
+
+    // *** BADGE - PAGE D'ACCUEIL ***
+
     .badge {
         @include column-center;
         width: 80px;
@@ -183,10 +182,10 @@ main {
         background: $tertiaire;
         position: relative;
         bottom: -50px;
-        right: -266px;
+        right: -254px;
 
         @media screen and (min-width: 1024px) {
-            right: -400px;
+            right: -388px;
         }
     }
 
@@ -195,6 +194,8 @@ main {
         font-weight: bold;
     }
 
+    // *** CARDS RESTAURANTS - PAGE D'ACCUEIL***
+
     ._restaurants-card {
         display: grid;
         justify-content: space-around;
@@ -202,12 +203,15 @@ main {
         border-radius: 15px;
         box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
         opacity: 1;
-        transition: 0.3s ease-in-out;
+        transition: 0.1s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            transition: 0.1s ease-in-out;
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.6);
+        }
     }
 
-    ._restaurants-card:hover {
-        @include btn-hover;
-    }
     ._restaurants-img {
         height: 190px;
         width: 346px;
@@ -234,12 +238,31 @@ main {
         padding-top: 3px;
     }
 
-    ._restaurants-heart {
+    // *** COEURS ***
+
+    ._restaurants-heart-container {
         width: 16px;
         position: relative;
         top: -33px;
-        left: 303px;
+        left: 305px;
+
+        .fa-solid {
+            position: relative;
+            top: -18px;
+            opacity: 0;
+            color: transparent;
+            background-image: $button-gradient;
+            background-clip: text;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                opacity: 1;
+                transition: 0.1s ease-in-out;
+            }
+        }
     }
+
+    // *** MEDIAS QUERIES - CARDS RESTAURANTS - PAGE D'ACCUEIL ***
 
     @media (min-width: 1024px) {
         ._restaurants-container {
@@ -264,13 +287,13 @@ main {
             width: 480px;
         }
 
-        ._restaurants-heart {
+        ._restaurants-heart-container {
             left: 425px;
         }
     }
 }
 
-//  *** FOOTER ****
+//  *** FOOTER - PAGE D'ACCUEIL ****
 
 footer {
     background: $grey-dark;
@@ -300,7 +323,6 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 7px;
-
     }
 
     a {
@@ -333,7 +355,7 @@ footer {
 
 // ***********  PAGES RESTAURANTS (MOBILE FIRST ) ******************
 
-// HEADER PAGES RESTAURANTS
+//  HEADER - PAGES RESTAURANTS
 
 @media screen and (min-width: 1024px) {
     ._restaurants-header {
@@ -351,7 +373,7 @@ footer {
     padding-left: 17px;
 }
 
-// EN - TETE RESTAURANTS
+// EN - TETE - - PAGES RESTAURANTS
 
 ._restaurants-entete img {
     width: 100%;
@@ -362,9 +384,14 @@ footer {
     }
 }
 
-// MENUS PAGES RESTAURANTS
+// MENUS - PAGES RESTAURANTS
 
 .menus {
+    @include column-center;
+    width: 100%;
+}
+
+._menus-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -378,14 +405,13 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
-    .menus {
+    ._menus-container {
         width: 60%;
-        right: -315px;
         padding-bottom: 165px;
     }
 }
 
-// NOMS RESTAURANTS
+// NOMS - PAGES RESTAURANTS
 
 ._restaurants-titres {
     padding: 16px 0 0 0;
@@ -402,14 +428,17 @@ footer {
     }
 }
 
-// ENTREES - PLATS - DESSERTS
+// ENTREES - PLATS - DESSERTS - PAGES RESTAURANTS
 
 .plats-container {
     @include column-center;
     gap: 12px;
     width: 100%;
 
+ 
+
     ._plats-titre {
+        //animation: menus 2s;
         font-weight: 100;
         height: 27px;
         width: 90%;
@@ -421,31 +450,75 @@ footer {
         border-color: $tertiaire;
     }
 
-    article {
+    article {   
+        
+        @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            animation-delay: 100ms * $i;
+        }
+    }
+        animation: menus 1s;
+        animation-fill-mode: both;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         border-radius: 15px;
         width: 80%;
-        height: 40px;
-        padding: 20px;
-        gap: 5px;
+        height: 70px;
         background: $white;
         box-shadow: 0 4.01149px 15.0431px 0 rgba(0, 0, 0, 0.1);
-    }
+        overflow: hidden;
 
-    ._article-titre {
-        height: 21px;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    ._article-sous {
-        display: flex;
-        justify-content: space-between;
-        height: 19px;
-        font-size: 15px;
-    }
-    strong {
-        height: 18px;
+        ._article-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        ._article-price {
+            margin-left: auto;
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+
+            p {
+                font-weight: bold;
+            }
+        }
+
+        h3 {
+            height: 21px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        p {
+            height: 19px;
+            font-size: 15px;
+        }
+
+        strong {
+            height: 18px;
+            margin-left: auto;
+        }
+
+        ._article-coche {
+            background: $tertiaire;
+            @include column-center;
+            color: $white;
+            margin-right: -50px;
+            width: 50px;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &:hover ._article-coche {
+            transition: 0.2s ease-in-out;
+            margin-right: 0;
+        }
     }
 
     @media screen and (min-width: 1024px) {
@@ -455,7 +528,7 @@ footer {
     }
 }
 
-// BOUTON COMMANDER RESTAURANTS
+// BOUTON COMMANDER - PAGES RESTAURANTS
 
 .bouton-container {
     display: flex;
@@ -497,7 +570,7 @@ footer {
     }
 }
 
-// FOOTER PAGE RESTAURANTS
+// FOOTER - PAGES RESTAURANTS
 @media screen and (min-width: 1024px) {
     ._footer-restaurants {
         margin: -163px 0 0 0;
