@@ -1,6 +1,6 @@
 {
     "editor.fontSize": 15,
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 4,
     "liveServer.settings.donotShowInfoMsg": true,
     "[css]": {
         "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
