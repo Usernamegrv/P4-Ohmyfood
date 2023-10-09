@@ -22,8 +22,10 @@ header {
         background: $white;
         font-family: "Shrikhand", cursive;
         font-size: 30px;
-        width: 162px;
-        padding: 14px 89px 13px 89px;
+        width: 100%;
+        padding: 14px 0 13px 0;
+        @include column-center;
+        flex-wrap: wrap;
     }
 }
 
@@ -59,14 +61,13 @@ main {
     ._discover-h4 {
         @include display-flex-center;
         height: 68px;
-        width: 70%;
+        width: 80%;
         text-align: center;
         font-size: 24px;
     }
     ._discover-p {
         font-size: 18px;
         text-align: center;
-        width: 85%;
         height: 46px;
         color: $grey-dark;
         padding-top: 8px;
@@ -112,7 +113,7 @@ main {
 
     ._fonctionnement-box {
         background: $background;
-        width: 322.5px;
+        width: 285.5px;
         height: 72px;
         border-radius: 20px;
         text-align: center;
@@ -126,7 +127,7 @@ main {
         color: $white;
         position: absolute;
         border-radius: 500px;
-        transform: translateX(-650%);
+        transform: translateX(-580%);
         padding: 3px 8px 3px 8px;
     }
 
@@ -136,9 +137,6 @@ main {
     }
 
     @media screen and (min-width: 1024px) {
-        ._fonctionnement-p {
-            width: 70%;
-        }
         ._container-fonctionnement {
             flex-direction: row;
             margin-bottom: 20px;
@@ -157,19 +155,42 @@ main {
     padding-bottom: 50px;
 
     ._restaurants-titre-accueil {
-        @include column-center;
-        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 90%;
         padding-top: 30px;
         padding-bottom: 20px;
+
+        @media (min-width: 1024px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
     }
 
     ._restaurants-container {
         @include column-center;
         gap: 18px;
+        width: 95%;
+
+        @media screen and (min-width: 767px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 65px;
+        }
+        @media (min-width: 1024px) {
+            width: 100%;
+        }
     }
 
     a {
         text-decoration: none;
+        width: 288px;
+
+        @media screen and (min-width: 1024px) {
+            width: 479px;
+        }
     }
 
     // *** BADGE - PAGE D'ACCUEIL ***
@@ -181,11 +202,11 @@ main {
         text-decoration: none;
         background: $tertiaire;
         position: relative;
-        bottom: -50px;
-        right: -254px;
+        left: 194px;
+        bottom: -40px;
 
         @media screen and (min-width: 1024px) {
-            right: -388px;
+            left: 376px;
         }
     }
 
@@ -214,9 +235,13 @@ main {
 
     ._restaurants-img {
         height: 190px;
-        width: 346px;
+        width: 288px;
         border-radius: 15px 15px 0 0;
         object-fit: cover;
+
+        @media screen and (min-width: 1024px) {
+            width: 479px;
+        }
     }
     ._restaurants-txt {
         height: 64px;
@@ -243,8 +268,12 @@ main {
     ._restaurants-heart-container {
         width: 16px;
         position: relative;
-        top: -33px;
-        left: 305px;
+        left: 254px;
+        top:-30px;
+
+        @media (min-width: 1024px) {
+            left: 425px;
+        }
 
         .fa-solid {
             position: relative;
@@ -253,42 +282,12 @@ main {
             color: transparent;
             background-image: $button-gradient;
             background-clip: text;
-            transition: 0.1s ease-in-out;
+            transition: 500ms ease-in-out;
 
             &:hover {
                 opacity: 1;
-                transition: 1ms ease-in-out;
+                transition: 500ms ease-in-out;
             }
-        }
-    }
-
-    // *** MEDIAS QUERIES - CARDS RESTAURANTS - PAGE D'ACCUEIL ***
-
-    @media (min-width: 1024px) {
-        ._restaurants-container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 100px;
-            width: 80%;
-        }
-
-        ._restaurants-titre-accueil {
-            width: 70%;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-        }
-        ._restaurants-card {
-            width: 480px;
-        }
-
-        ._restaurants-img {
-            width: 480px;
-        }
-
-        ._restaurants-heart-container {
-            left: 425px;
         }
     }
 }
@@ -328,6 +327,9 @@ footer {
     a {
         text-decoration: none;
         color: $white;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     @media (min-width: 1024px) {
@@ -336,6 +338,9 @@ footer {
         flex-direction: row-reverse;
         padding: 50px 0 0 0;
 
+        a:hover {
+            text-decoration: overline;
+        }
         ._container-footer {
             display: flex;
             flex-direction: row-reverse;
@@ -358,33 +363,30 @@ footer {
 //  HEADER - PAGES RESTAURANTS
 
 ._restaurants-header {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
     width: 100%;
-    a {
-        width: 50%;
+
+    ._header-icone {
+        color: $grey-dark;
     }
     h1 {
-        padding: 14px 89px 13px 89px;
+        padding: 14px 0 13px 0;
+        width: 80%;
     }
-}
 
-._header-icone {
-    color: $grey-dark;
-    position: fixed;
-    left: 15px;
-    top: 29px;
+    .element_vide {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 // EN - TETE - - PAGES RESTAURANTS
 
 ._restaurants-entete img {
     width: 100%;
+    height: 215px;
     object-fit: cover;
-
-    @media (min-width: 1024px) {
-        height: 345px;
-    }
 }
 
 // MENUS - PAGES RESTAURANTS
@@ -392,25 +394,23 @@ footer {
 .menus {
     @include column-center;
     width: 100%;
-}
 
-._menus-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
-    position: relative;
-    top: -34px;
-    background: $background;
-    border-radius: 25px 25px 0 0;
-}
-
-@media screen and (min-width: 1024px) {
     ._menus-container {
-        width: 60%;
-        padding-bottom: 165px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        width: 100%;
+        position: relative;
+        top: -34px;
+        background: $background;
+        border-radius: 25px 25px 0 0;
+
+        @media screen and (min-width: 1024px) {
+            width: 60%;
+            padding-bottom: 165px;
+        }
     }
 }
 
@@ -419,15 +419,15 @@ footer {
 ._restaurants-titres {
     padding: 16px 0 0 0;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    gap: 40px;
-    width: 80%;
+    gap: 20px;
 
     p {
         font-family: "Shrikhand", cursive;
         font-size: 26px;
+    }
+    @media screen and (min-width: 1024px) {
+        justify-content: center;
     }
 }
 
@@ -438,12 +438,12 @@ footer {
     background-clip: text;
     left: -20.5px;
     opacity: 0;
-    transition: 0.1s ease-in-out;
+    transition: 500ms ease-in-out;
 
     &:hover {
         cursor: pointer;
         opacity: 1;
-        transition: 1ms ease-in-out;
+        transition: 500ms ease-in-out;
     }
 }
 
@@ -467,11 +467,12 @@ footer {
     }
 
     article {
-        @for $i from 1 through 4 {
+        @for $i from 1 through 10 {
             &:nth-child(#{$i}) {
                 animation-delay: 100ms * $i;
             }
         }
+
         animation: menus 1s;
         animation-fill-mode: both;
         display: flex;
@@ -487,7 +488,22 @@ footer {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 20px;
+            padding: 0 20px;
+            width: 80%;
+            overflow: hidden;
+
+            h3 {
+                height: 21px;
+                font-size: 18px;
+                font-weight: bold;
+                @include rognage;
+            }
+
+            p {
+                height: 19px;
+                font-size: 15px;
+                @include rognage;
+            }
         }
 
         ._article-price {
@@ -500,24 +516,13 @@ footer {
                 font-weight: bold;
             }
         }
-
-        h3 {
-            height: 21px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        p {
-            height: 19px;
-            font-size: 15px;
-        }
-
         strong {
             height: 18px;
             margin-left: auto;
         }
 
         ._article-coche {
+            flex-shrink: 0;
             background: $tertiaire;
             @include column-center;
             color: $white;
