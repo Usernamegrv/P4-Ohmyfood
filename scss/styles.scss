@@ -120,6 +120,15 @@ main {
         @include display-flex-center;
         box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
         gap: 15px;
+        transition: 0.1s ease-in-out ;
+        &:hover {
+            cursor: pointer;
+            transition: 0.1s ease-in-out;
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+        }
+        &:hover .fa-solid {
+            color: $primaire;
+        }
 
         .fa-solid {
             color:$grey-icon;
