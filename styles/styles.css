@@ -145,6 +145,9 @@ main {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   gap: 15px;
 }
+.fonctionnement ._fonctionnement-box .fa-solid {
+  color: #7E7E7E;
+}
 .fonctionnement ._fonctionnement-absolute {
   background: #9356DC;
   color: white;
@@ -334,6 +337,9 @@ footer ._footer-links {
   display: flex;
   flex-direction: column;
   gap: 7px;
+}
+footer ._footer-links .fa-solid {
+  color: white;
 }
 footer a {
   text-decoration: none;
