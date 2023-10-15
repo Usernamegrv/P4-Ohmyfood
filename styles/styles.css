@@ -309,7 +309,7 @@ main {
 }
 .restaurants ._restaurants-heart-container .fa-solid {
   position: relative;
-  top: -18px;
+  top: -18.5px;
   opacity: 0;
   color: transparent;
   background-image: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
