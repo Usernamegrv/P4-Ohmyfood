@@ -191,6 +191,7 @@ main {
     a {
         text-decoration: none;
         width: 288px;
+        position: relative;
 
         @media screen and (min-width: 1024px) {
             width: 479px;
@@ -205,9 +206,9 @@ main {
         height: 29px;
         text-decoration: none;
         background: $tertiaire;
-        position: relative;
+        position: absolute;
         left: 194px;
-        bottom: -40px;
+        bottom: 208px;
 
         @media screen and (min-width: 1024px) {
             left: 376px;
