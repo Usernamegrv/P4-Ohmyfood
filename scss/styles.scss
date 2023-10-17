@@ -483,7 +483,7 @@ footer {
     }
 
     article {
-        @for $i from 1 through 10 {
+        @for $i from 1 through 10 { //jusqu'a dix si l'on souhaite ajouter des plats ultérieurement
             &:nth-child(#{$i}) {
                 animation-delay: 100ms * $i;
             }

@@ -6,8 +6,8 @@
     place-items: center;
     background-color: $white;
     opacity: 0.8;
-    height: 100vh; // viewport high pour que le fond prenne tout l'écran
-    inset: 0; // inset=top righ bottom left
+    height: 100vh; // viewport high (hauteur de l'écran visible) pour que le fond prenne tout l'écran
+    inset: 0; // inset= margin top righ bottom left
     z-index: 1; // mettre l'élèment au dessus des autres et ainsi les recouvrir
     animation: disappear 
     200ms 2s forwards;
