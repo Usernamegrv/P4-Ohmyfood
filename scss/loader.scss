@@ -5,7 +5,7 @@
     display: grid;
     place-items: center;
     background-color: $white;
-    opacity: 0.8;
+    opacity: 1;
     height: 100vh; // viewport high (hauteur de l'écran visible) pour que le fond prenne tout l'écran
     inset: 0; // inset= margin top righ bottom left
     z-index: 1; // mettre l'élèment au dessus des autres et ainsi les recouvrir
@@ -23,12 +23,6 @@
         animation-iteration-count: 2;
     }
 
-   // ***** Si je garde icone spinner de couleur gradient
-   /* i {
-        color: transparent;
-        background-image: $button-gradient;
-        background-clip: text; 
-    }*/   
 }
 
 @keyframes disappear {

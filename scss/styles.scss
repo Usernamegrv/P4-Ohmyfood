@@ -438,7 +438,7 @@ footer {
     align-items: center;
     gap: 20px;
 
-    p {
+    h2 {
         font-family: "Shrikhand", cursive;
         font-size: 26px;
     }
@@ -514,12 +514,6 @@ footer {
                 font-weight: bold;
                 @include rognage;
             }
-
-            p {
-                height: 19px;
-                font-size: 15px;
-                @include rognage;
-            }
         }
 
         ._article-price {
@@ -527,11 +521,9 @@ footer {
             display: flex;
             align-items: flex-end;
             padding: 16px;
-
-            p {
-                font-weight: bold;
-            }
+            font-weight: bold;
         }
+
         strong {
             height: 18px;
             margin-left: auto;
@@ -613,7 +605,3 @@ footer {
     }
 }
 
-// RETIRER ELEMENTS INLINE ICONE ET LES DECLARER EN CSS
-// AJOUTER TITTLES ET ALT
-// CHECKER LA POLICE D'ECRITURE
-// REPERER LES DOUBLONS ET APPLIQUER LA METHODE DRY AVEC MIXINS / VARIABLES
