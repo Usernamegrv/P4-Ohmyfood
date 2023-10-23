@@ -1,2 +1,2 @@
 Oh My Food
-https://usernamegrv.github.io/Ohmyfood/
+https://github.com/Usernamegrv/Ohmyfood.git
