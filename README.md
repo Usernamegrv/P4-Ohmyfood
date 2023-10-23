@@ -1,4 +1,3 @@
-Oh My Food
-https://github.com/Usernamegrv/Ohmyfood.git
-Oh My Food deployment
+Ohmyfood
+
 https://usernamegrv.github.io/Ohmyfood/
